@@ -1,1 +1,5 @@
-# DND-Search
+Main.java is essentially the main menu that will ask for a skill to sort and then sorts and prints the database (in ascending order) based on the skill selected. 
+
+Character.java represents 1 single character. The character contains 8 members: the type, the name, the strength value, the dexterity value, the constitution value, the intelligence value, the wisdom value, and the charisma value. For each of the 8 members, I created a getter for them. For all of the members except for the type and the name, I created a different Comparator and a toString representation for them. The comparator is used to help sort a collection of Characters (as an ArrayList) in the third Java file.
+
+CharacterDatabase.java simply holds an ArrayList of characters read from the file. However, not all of the skills are shown in the same order. Thus, for each character, the code first get the type and the name. After that, I chose to use a loop to go through the 6 skills. To decide which skill is which, there is a combination of split() and a series of if statements. Then create a print function (based on the inputted skill from Main.java). If a corresponding skill matches up, then it call Collections.sort with 2 parameters: the ArrayList itself and the appropriate Comparator as created from Character.java. Afterwards, the code immediately print all of the Characters.
